@@ -14,3 +14,7 @@ config/name="PhoenixQuest"
 run/main_scene="res://battle.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+State="*res://src/State.gd"

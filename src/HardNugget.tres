@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://kbi0kh57kea5"]
+
+[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_2msw0"]
+[ext_resource type="Texture2D" uid="uid://dt2ocr1i252jm" path="res://sprites/01.png" id="2_yurrg"]
+
+[resource]
+script = ExtResource("1_2msw0")
+name = "Hard Nugget"
+texture = ExtResource("2_yurrg")
+health = 25
+attack_damage = 10
