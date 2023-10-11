@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dcpfyu04fl0yb"]
+
+[ext_resource type="Script" path="res://src/Player.gd" id="1_fvib4"]
+[ext_resource type="Texture2D" uid="uid://c4wgs3tm0gb30" path="res://images/throwaway_portraits/Omaha.PNG" id="1_hbdpc"]
+
+[resource]
+script = ExtResource("1_fvib4")
+name = "Omaha"
+portrait = ExtResource("1_hbdpc")
+current_health = 40
+max_health = 40
+attack_damage = 10

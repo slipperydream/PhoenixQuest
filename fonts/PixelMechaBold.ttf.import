@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dadxgfx2wikv1"
-path="res://.godot/imported/NESCyrillic.ttf-500efd3e378451630a9d98e0dc3adbf5.fontdata"
+uid="uid://dco7q32xo4jsb"
+path="res://.godot/imported/PixelMechaBold.ttf-de3bf7ed73820c526bfad09dc0f780de.fontdata"
 
 [deps]
 
-source_file="res://fonts/NESCyrillic.ttf"
-dest_files=["res://.godot/imported/NESCyrillic.ttf-500efd3e378451630a9d98e0dc3adbf5.fontdata"]
+source_file="res://fonts/PixelMechaBold.ttf"
+dest_files=["res://.godot/imported/PixelMechaBold.ttf-de3bf7ed73820c526bfad09dc0f780de.fontdata"]
 
 [params]
 

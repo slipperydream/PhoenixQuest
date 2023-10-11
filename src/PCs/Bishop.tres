@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ddsbk3eda2dlx"]
+
+[ext_resource type="Texture2D" uid="uid://bdj6q4pp44noi" path="res://images/throwaway_portraits/Bishop.PNG" id="1_4jvq7"]
+[ext_resource type="Script" path="res://src/Player.gd" id="1_6b3n5"]
+
+[resource]
+script = ExtResource("1_6b3n5")
+name = "Bishop"
+portrait = ExtResource("1_4jvq7")
+current_health = 35
+max_health = 35
+attack_damage = 20

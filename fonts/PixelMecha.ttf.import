@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://0ooaj0ks818d"
-path="res://.godot/imported/Adventurer.ttf-7c7fa030670c8a6c450b1bb1a4405236.fontdata"
+uid="uid://nshj7fdgrumu"
+path="res://.godot/imported/PixelMecha.ttf-c22552c0c2b0fbb7b3f8345c1d53e962.fontdata"
 
 [deps]
 
-source_file="res://fonts/Adventurer.ttf"
-dest_files=["res://.godot/imported/Adventurer.ttf-7c7fa030670c8a6c450b1bb1a4405236.fontdata"]
+source_file="res://fonts/PixelMecha.ttf"
+dest_files=["res://.godot/imported/PixelMecha.ttf-c22552c0c2b0fbb7b3f8345c1d53e962.fontdata"]
 
 [params]
 

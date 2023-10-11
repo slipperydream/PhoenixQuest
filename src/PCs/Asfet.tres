@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://fjlemc5m55c5"]
+
+[ext_resource type="Script" path="res://src/Player.gd" id="1_5f4on"]
+[ext_resource type="Texture2D" uid="uid://bx81flbjkddwf" path="res://images/throwaway_portraits/Asfet.PNG" id="1_a27n8"]
+
+[resource]
+script = ExtResource("1_5f4on")
+name = "Asfet"
+portrait = ExtResource("1_a27n8")
+current_health = 30
+max_health = 30
+attack_damage = 25
