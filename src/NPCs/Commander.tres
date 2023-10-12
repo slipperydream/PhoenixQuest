@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://utmncj6h34fu"]
+
+[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_crdpn"]
+[ext_resource type="Texture2D" uid="uid://bcj03crn0xe6b" path="res://sprites/throwaway_sprites/sci_fi_grunt_01.png" id="2_o1gsm"]
+
+[resource]
+script = ExtResource("1_crdpn")
+name = "Grunt"
+texture = ExtResource("2_o1gsm")
+health = 25
+attack_damage = 10

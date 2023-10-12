@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx81flbjkddwf"
-path="res://.godot/imported/Asfet.PNG-0e958bc9e5b05cd7c7018a338b7bb26e.ctex"
+path="res://.godot/imported/Asfet.png-aa9fc43d3a1bb5dd41fa7b57cc571430.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/throwaway_portraits/Asfet.PNG"
-dest_files=["res://.godot/imported/Asfet.PNG-0e958bc9e5b05cd7c7018a338b7bb26e.ctex"]
+source_file="res://images/throwaway_portraits/Asfet.png"
+dest_files=["res://.godot/imported/Asfet.png-aa9fc43d3a1bb5dd41fa7b57cc571430.ctex"]
 
 [params]
 

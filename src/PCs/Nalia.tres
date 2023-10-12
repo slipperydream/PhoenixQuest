@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cwh52naom1n6n"]
 
-[ext_resource type="Texture2D" uid="uid://bye5awskdcsvc" path="res://images/throwaway_portraits/Nalia.PNG" id="1_0vmtu"]
+[ext_resource type="Texture2D" uid="uid://bye5awskdcsvc" path="res://images/throwaway_portraits/Nalia.png" id="1_0vmtu"]
 [ext_resource type="Script" path="res://src/Player.gd" id="1_yxms0"]
 
 [resource]

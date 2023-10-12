@@ -1,0 +1,360 @@
+[gd_scene load_steps=7 format=3 uid="uid://djsfrl0lta3vh"]
+
+[ext_resource type="FontFile" uid="uid://d2wd67gqcqjw8" path="res://fonts/FutureKid.ttf" id="1_no6ge"]
+[ext_resource type="FontFile" uid="uid://dco7q32xo4jsb" path="res://fonts/PixelMechaBold.ttf" id="2_qgr3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpm2d"]
+bg_color = Color(0.160784, 0.164706, 0.313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upueo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v0yj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2012a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="ActionsBottomContainer" type="HBoxContainer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -31.0
+offset_right = 541.0
+offset_bottom = 1.0
+grow_vertical = 0
+
+[node name="ExamineContainer" type="HBoxContainer" parent="." groups=["combat"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="ExamineContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Examine" type="Button" parent="ExamineContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Examine
+"
+
+[node name="Menu" type="HBoxContainer" parent="." groups=["menu"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Menu" type="Button" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Menu
+"
+
+[node name="Confirm" type="HBoxContainer" parent="." groups=["menu"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="Confirm"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "Enter
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Confirm" type="Button" parent="Confirm"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Confirm
+"
+
+[node name="Cancel" type="HBoxContainer" parent="." groups=["menu"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="Cancel"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "ESC
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Cancel" type="Button" parent="Cancel"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Cancel
+"
+
+[node name="Save" type="HBoxContainer" parent="." groups=["menu"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="Save"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "ESC
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Save" type="Button" parent="Save"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Save"
+
+[node name="Load" type="HBoxContainer" parent="." groups=["menu"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="Load"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "ESC
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Load" type="Button" parent="Load"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Load
+"
+
+[node name="TargetContainer" type="HBoxContainer" parent="." groups=["combat"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="TargetContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Key2" type="Label" parent="TargetContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Target" type="Button" parent="TargetContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Target
+"
+
+[node name="DossierContainer" type="HBoxContainer" parent="." groups=["combat"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="DossierContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "Tab"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Dossier" type="Button" parent="DossierContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Dossier
+"
+
+[node name="CutOutContainer" type="HBoxContainer" parent="." groups=["combat"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="CutOutContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Cut Out" type="Button" parent="CutOutContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Cut Out Chip
+"
+
+[node name="TeamUpContainer" type="HBoxContainer" parent="." groups=["combat"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="TeamUpContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "T"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Team Up" type="Button" parent="TeamUpContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Team Up"
+
+[node name="RunContainer" type="HBoxContainer" parent="." groups=["combat"]]
+visible = false
+layout_mode = 2
+
+[node name="Key" type="Label" parent="RunContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_no6ge")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qpm2d")
+text = "\\"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Run" type="Button" parent="RunContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.552941, 0.0823529, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.827451, 0.0862745, 0.486275, 1)
+theme_override_fonts/font = ExtResource("2_qgr3s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_upueo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0v0yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2012a")
+text = "Run"

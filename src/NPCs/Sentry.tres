@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dpfltaxrugc4e"]
+
+[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_kbk81"]
+[ext_resource type="Texture2D" uid="uid://uos0hti3yjq4" path="res://sprites/throwaway_sprites/sci_fi_captain_01.png" id="2_cs4uy"]
+
+[resource]
+script = ExtResource("1_kbk81")
+name = "Captain"
+texture = ExtResource("2_cs4uy")
+health = 35
+attack_damage = 15

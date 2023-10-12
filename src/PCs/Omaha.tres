@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dcpfyu04fl0yb"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dcpfyu04fl0yb"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_fvib4"]
-[ext_resource type="Texture2D" uid="uid://c4wgs3tm0gb30" path="res://images/throwaway_portraits/Omaha.PNG" id="1_hbdpc"]
+[ext_resource type="Texture2D" uid="uid://c4wgs3tm0gb30" path="res://images/throwaway_portraits/Omaha.png" id="1_wnnno"]
+[ext_resource type="Texture2D" uid="uid://dp3vao4tu0f5a" path="res://sprites/throwaway_sprites/mix_match_girl_sc_fi_03.png" id="3_o7trp"]
 
 [resource]
 script = ExtResource("1_fvib4")
 name = "Omaha"
-portrait = ExtResource("1_hbdpc")
+portrait = ExtResource("1_wnnno")
+texture = ExtResource("3_o7trp")
 current_health = 40
 max_health = 40
 attack_damage = 10

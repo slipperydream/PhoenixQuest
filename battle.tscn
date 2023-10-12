@@ -1,12 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://b6ex3e1s67i6h"]
+[gd_scene load_steps=24 format=3 uid="uid://b6ex3e1s67i6h"]
 
 [ext_resource type="Script" path="res://battle.gd" id="1_citil"]
-[ext_resource type="Resource" uid="uid://kbi0kh57kea5" path="res://src/NPCs/HardNugget.tres" id="2_jwn4n"]
+[ext_resource type="Resource" uid="uid://kbi0kh57kea5" path="res://src/NPCs/Grunt.tres" id="2_at0pf"]
 [ext_resource type="Resource" uid="uid://ddsbk3eda2dlx" path="res://src/PCs/Bishop.tres" id="3_11nsa"]
-[ext_resource type="Texture2D" uid="uid://b0fcnyymen303" path="res://images/battleback5_1400x788.png" id="3_rogln"]
 [ext_resource type="Resource" uid="uid://ulbat71q3sxh" path="res://src/PCs/HiGears.tres" id="4_fb6yc"]
 [ext_resource type="Resource" uid="uid://dcpfyu04fl0yb" path="res://src/PCs/Omaha.tres" id="5_boy52"]
+[ext_resource type="Texture2D" uid="uid://5tcr0og1wysf" path="res://images/throwaway_backgrounds/wet_city.PNG" id="6_7dvi8"]
 [ext_resource type="PackedScene" uid="uid://m0wnc3hq1hqv" path="res://PartyMember.tscn" id="7_8lshx"]
+[ext_resource type="Texture2D" uid="uid://4i4sjcp7cpc4" path="res://sprites/throwaway_sprites/pirate_01.png" id="10_k0a6y"]
+[ext_resource type="PackedScene" uid="uid://djsfrl0lta3vh" path="res://actions_bottom_container.tscn" id="11_6u0rc"]
+[ext_resource type="Texture2D" uid="uid://dhfg3up4xp6kd" path="res://sprites/throwaway_sprites/sentry_02.png" id="11_b406s"]
+[ext_resource type="Texture2D" uid="uid://dp3vao4tu0f5a" path="res://sprites/throwaway_sprites/mix_match_girl_sc_fi_03.png" id="12_3hf8q"]
+[ext_resource type="PackedScene" uid="uid://cepdxu45yajhi" path="res://actions_character_container.tscn" id="12_7d0ly"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrtwb"]
 bg_color = Color(0.227451, 0.227451, 0.34902, 1)
@@ -44,33 +49,12 @@ content_margin_bottom = 10.0
 [sub_resource type="LabelSettings" id="LabelSettings_60d1u"]
 font_size = 32
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf57w"]
-bg_color = Color(0.345098, 0.654902, 0.686275, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jc3gp"]
-bg_color = Color(0.780392, 0.141176, 0.694118, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgrey"]
-bg_color = Color(0.780392, 0.141176, 0.694118, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-
 [sub_resource type="Animation" id="Animation_k7hot"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyContainer/Enemy:self_modulate")
+tracks/0/path = NodePath("EnemyContainer/EnemySprite:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -109,7 +93,7 @@ resource_name = "enemy_damaged"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyContainer/Enemy:self_modulate")
+tracks/0/path = NodePath("EnemyContainer/EnemySprite:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -181,7 +165,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_citil")
-enemy = ExtResource("2_jwn4n")
+enemy = ExtResource("2_at0pf")
 party = Array[Resource]([ExtResource("3_11nsa"), ExtResource("4_fb6yc"), ExtResource("5_boy52")])
 
 [node name="Background" type="TextureRect" parent="."]
@@ -191,7 +175,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_rogln")
+texture = ExtResource("6_7dvi8")
 stretch_mode = 3
 
 [node name="EnemyContainer" type="VBoxContainer" parent="." groups=["enemies"]]
@@ -201,14 +185,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -482.0
+offset_top = -40.0
+offset_right = -354.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HP" type="Label" parent="EnemyContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -218,6 +203,7 @@ text = "HP: 25
 horizontal_alignment = 1
 
 [node name="HealthBar" type="ProgressBar" parent="EnemyContainer"]
+visible = false
 custom_minimum_size = Vector2(2.08165e-12, 32)
 layout_mode = 2
 size_flags_vertical = 4
@@ -227,7 +213,7 @@ step = 1.0
 value = 50.0
 show_percentage = false
 
-[node name="Enemy" type="TextureRect" parent="EnemyContainer"]
+[node name="EnemySprite" type="TextureRect" parent="EnemyContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 expand_mode = 1
@@ -239,14 +225,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -304.0
-offset_top = -343.0
-offset_right = -72.0
+offset_left = -627.0
+offset_top = -96.0
+offset_right = -3.0
 offset_bottom = -1.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
+columns = 3
 
 [node name="PartyMemberContainer1" parent="PartyPanel" instance=ExtResource("7_8lshx")]
 layout_mode = 2
@@ -300,61 +287,6 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = ">"
 
-[node name="ActionsMarginContainer" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 230.0
-offset_top = -174.0
-offset_right = 393.0
-offset_bottom = -11.0
-grow_vertical = 0
-
-[node name="Attack" type="Button" parent="ActionsMarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_bf57w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jc3gp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dgrey")
-text = "Attack
-"
-
-[node name="Defend" type="Button" parent="ActionsMarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_bf57w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jc3gp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dgrey")
-text = "Defend
-"
-
-[node name="Run" type="Button" parent="ActionsMarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_bf57w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jc3gp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dgrey")
-text = "Run"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_4g4i7")
@@ -363,6 +295,75 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[connection signal="pressed" from="ActionsMarginContainer/Attack" to="." method="_on_attack_pressed"]
-[connection signal="pressed" from="ActionsMarginContainer/Defend" to="." method="_on_defend_pressed"]
-[connection signal="pressed" from="ActionsMarginContainer/Run" to="." method="_on_run_pressed"]
+[node name="PartyMember1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 280.0
+offset_top = 56.0
+offset_right = 368.0
+offset_bottom = 184.0
+grow_vertical = 2
+texture = ExtResource("10_k0a6y")
+
+[node name="ActionsCharacterContainer" parent="PartyMember1" instance=ExtResource("12_7d0ly")]
+visible = false
+layout_mode = 1
+offset_left = -161.0
+offset_top = -47.0
+offset_right = 348.0
+offset_bottom = 51.0
+
+[node name="PartyMember2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 61.0
+offset_right = 59.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_b406s")
+
+[node name="ActionsCharacterContainer" parent="PartyMember2" instance=ExtResource("12_7d0ly")]
+visible = false
+layout_mode = 1
+offset_left = -161.0
+offset_top = -47.0
+offset_right = 348.0
+offset_bottom = 51.0
+
+[node name="PartyMember3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 64.0
+offset_right = -229.0
+offset_bottom = 192.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("12_3hf8q")
+
+[node name="ActionsCharacterContainer" parent="PartyMember3" instance=ExtResource("12_7d0ly")]
+visible = false
+layout_mode = 1
+offset_left = -161.0
+offset_top = -47.0
+offset_right = 348.0
+offset_bottom = 51.0
+
+[node name="ActionsBottomContainer" parent="." instance=ExtResource("11_6u0rc")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = -32.0
+offset_right = 589.0
+offset_bottom = 0.0

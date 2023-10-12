@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://deosc8y55h7ux"]
+
+[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_gywkg"]
+[ext_resource type="Texture2D" uid="uid://fdtfto3lb0tk" path="res://sprites/throwaway_sprites/scout_01.png" id="2_3glgp"]
+
+[resource]
+script = ExtResource("1_gywkg")
+name = "Scout"
+texture = ExtResource("2_3glgp")
+health = 20
+attack_damage = 15

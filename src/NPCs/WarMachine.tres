@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://wjyytadk821s"]
+
+[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_6rvfc"]
+[ext_resource type="Texture2D" uid="uid://c1fspriytb5rt" path="res://sprites/throwaway_sprites/War_Machine_01.png" id="2_1cqfp"]
+
+[resource]
+script = ExtResource("1_6rvfc")
+name = "WarMachine"
+texture = ExtResource("2_1cqfp")
+health = 100
+attack_damage = 25

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://27702ryn4ydp"]
 
-[ext_resource type="Texture2D" uid="uid://dq78pwxjpk4bo" path="res://images/throwaway_portraits/Soojin.PNG" id="1_nkmj8"]
+[ext_resource type="Texture2D" uid="uid://dq78pwxjpk4bo" path="res://images/throwaway_portraits/Soojin.png" id="1_nkmj8"]
 [ext_resource type="Script" path="res://src/Player.gd" id="1_xb5rw"]
 
 [resource]

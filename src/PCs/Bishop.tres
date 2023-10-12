@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ddsbk3eda2dlx"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ddsbk3eda2dlx"]
 
-[ext_resource type="Texture2D" uid="uid://bdj6q4pp44noi" path="res://images/throwaway_portraits/Bishop.PNG" id="1_4jvq7"]
 [ext_resource type="Script" path="res://src/Player.gd" id="1_6b3n5"]
+[ext_resource type="Texture2D" uid="uid://bdj6q4pp44noi" path="res://images/throwaway_portraits/Bishop.png" id="1_6ptla"]
+[ext_resource type="Texture2D" uid="uid://4i4sjcp7cpc4" path="res://sprites/throwaway_sprites/pirate_01.png" id="3_x6etd"]
 
 [resource]
 script = ExtResource("1_6b3n5")
 name = "Bishop"
-portrait = ExtResource("1_4jvq7")
+portrait = ExtResource("1_6ptla")
+texture = ExtResource("3_x6etd")
 current_health = 35
 max_health = 35
 attack_damage = 20
