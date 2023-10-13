@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://4jpeq5y6d75x"]
 
-[ext_resource type="Script" path="res://src/Player.gd" id="1_3abyh"]
+[ext_resource type="Script" path="res://src/Combatant.gd" id="1_3abyh"]
 [ext_resource type="Texture2D" uid="uid://c1r0s2luwe84n" path="res://images/throwaway_portraits/Victoria.png" id="1_pri8o"]
 
 [resource]

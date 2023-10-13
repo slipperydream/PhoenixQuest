@@ -1,17 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://b6ex3e1s67i6h"]
+[gd_scene load_steps=19 format=3 uid="uid://b6ex3e1s67i6h"]
 
-[ext_resource type="Script" path="res://battle.gd" id="1_citil"]
-[ext_resource type="Resource" uid="uid://kbi0kh57kea5" path="res://src/NPCs/Grunt.tres" id="2_at0pf"]
-[ext_resource type="Resource" uid="uid://ddsbk3eda2dlx" path="res://src/PCs/Bishop.tres" id="3_11nsa"]
-[ext_resource type="Resource" uid="uid://ulbat71q3sxh" path="res://src/PCs/HiGears.tres" id="4_fb6yc"]
-[ext_resource type="Resource" uid="uid://dcpfyu04fl0yb" path="res://src/PCs/Omaha.tres" id="5_boy52"]
+[ext_resource type="Script" path="res://src/battle.gd" id="1_spkef"]
+[ext_resource type="Texture2D" uid="uid://c6itp00irdq0s" path="res://images/throwaway_sprites/golem_armor.png" id="4_n8ghr"]
 [ext_resource type="Texture2D" uid="uid://5tcr0og1wysf" path="res://images/throwaway_backgrounds/wet_city.PNG" id="6_7dvi8"]
-[ext_resource type="PackedScene" uid="uid://m0wnc3hq1hqv" path="res://PartyMember.tscn" id="7_8lshx"]
-[ext_resource type="Texture2D" uid="uid://4i4sjcp7cpc4" path="res://sprites/throwaway_sprites/pirate_01.png" id="10_k0a6y"]
+[ext_resource type="Texture2D" uid="uid://dor0m25jnkmva" path="res://images/throwaway_sprites/robot.png" id="6_v0by4"]
+[ext_resource type="Texture2D" uid="uid://rdq6vagklg4w" path="res://images/throwaway_sprites/sci_fi_captain_03.png" id="7_7ew5o"]
+[ext_resource type="PackedScene" uid="uid://m0wnc3hq1hqv" path="res://PartyMemberUI.tscn" id="7_8lshx"]
 [ext_resource type="PackedScene" uid="uid://djsfrl0lta3vh" path="res://actions_bottom_container.tscn" id="11_6u0rc"]
-[ext_resource type="Texture2D" uid="uid://dhfg3up4xp6kd" path="res://sprites/throwaway_sprites/sentry_02.png" id="11_b406s"]
-[ext_resource type="Texture2D" uid="uid://dp3vao4tu0f5a" path="res://sprites/throwaway_sprites/mix_match_girl_sc_fi_03.png" id="12_3hf8q"]
+[ext_resource type="PackedScene" uid="uid://7ednuapk87d7" path="res://src/PCs/Asfet.tscn" id="11_xw3ed"]
+[ext_resource type="PackedScene" uid="uid://dnmwv4sa8nbca" path="res://src/PCs/HiGears.tscn" id="11_ykq60"]
 [ext_resource type="PackedScene" uid="uid://cepdxu45yajhi" path="res://actions_character_container.tscn" id="12_7d0ly"]
+[ext_resource type="PackedScene" uid="uid://8akinlsgulvr" path="res://src/PCs/Bishop.tscn" id="12_u2d8r"]
+[ext_resource type="PackedScene" uid="uid://dbnal4x4qi44u" path="res://turn_queue.tscn" id="13_8b3ju"]
+[ext_resource type="PackedScene" uid="uid://cueq7lic5pibl" path="res://src/NPCs/Captain.tscn" id="14_gqvlo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrtwb"]
 bg_color = Color(0.227451, 0.227451, 0.34902, 1)
@@ -49,114 +50,6 @@ content_margin_bottom = 10.0
 [sub_resource type="LabelSettings" id="LabelSettings_60d1u"]
 font_size = 32
 
-[sub_resource type="Animation" id="Animation_k7hot"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyContainer/EnemySprite:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("EnemyContainer:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_2fwf4"]
-resource_name = "enemy_damaged"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyContainer/EnemySprite:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_qs2ac"]
-resource_name = "enemy_death"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EnemyContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_qtnpi"]
-resource_name = "screen_shake"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-7, -7), Vector2(10, 10), Vector2(-5, 6), Vector2(7, -4), Vector2(-11, 7), Vector2(7, 1), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0kf3o"]
-resource_name = "defend_shake"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-2, -2), Vector2(2, 2), Vector2(-2, -1), Vector2(2, -1), Vector2(-1, 1), Vector2(1, 1), Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4g4i7"]
-_data = {
-"RESET": SubResource("Animation_k7hot"),
-"enemy_damaged": SubResource("Animation_2fwf4"),
-"enemy_death": SubResource("Animation_qs2ac"),
-"screen_shake": SubResource("Animation_qtnpi"),
-"small_shake": SubResource("Animation_0kf3o")
-}
-
 [node name="Battle" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -164,9 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_citil")
-enemy = ExtResource("2_at0pf")
-party = Array[Resource]([ExtResource("3_11nsa"), ExtResource("4_fb6yc"), ExtResource("5_boy52")])
+script = ExtResource("1_spkef")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -185,10 +76,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -482.0
-offset_top = -40.0
-offset_right = -354.0
-offset_bottom = 88.0
+offset_left = -46.0
+offset_top = -177.0
+offset_right = 82.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -214,6 +105,7 @@ value = 50.0
 show_percentage = false
 
 [node name="EnemySprite" type="TextureRect" parent="EnemyContainer"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
 expand_mode = 1
@@ -287,11 +179,6 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = ">"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_4g4i7")
-}
-
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
@@ -305,7 +192,7 @@ offset_top = 56.0
 offset_right = 368.0
 offset_bottom = 184.0
 grow_vertical = 2
-texture = ExtResource("10_k0a6y")
+texture = ExtResource("4_n8ghr")
 
 [node name="ActionsCharacterContainer" parent="PartyMember1" instance=ExtResource("12_7d0ly")]
 visible = false
@@ -328,7 +215,7 @@ offset_right = 59.0
 offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_b406s")
+texture = ExtResource("6_v0by4")
 
 [node name="ActionsCharacterContainer" parent="PartyMember2" instance=ExtResource("12_7d0ly")]
 visible = false
@@ -351,7 +238,7 @@ offset_right = -229.0
 offset_bottom = 192.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("12_3hf8q")
+texture = ExtResource("7_7ew5o")
 
 [node name="ActionsCharacterContainer" parent="PartyMember3" instance=ExtResource("12_7d0ly")]
 visible = false
@@ -367,3 +254,13 @@ offset_left = 0.0
 offset_top = -32.0
 offset_right = 589.0
 offset_bottom = 0.0
+
+[node name="TurnQueue" parent="." instance=ExtResource("13_8b3ju")]
+
+[node name="Captain" parent="TurnQueue" instance=ExtResource("14_gqvlo")]
+
+[node name="Asfet" parent="TurnQueue" instance=ExtResource("11_xw3ed")]
+
+[node name="Bishop" parent="TurnQueue" instance=ExtResource("12_u2d8r")]
+
+[node name="HiGears" parent="TurnQueue" instance=ExtResource("11_ykq60")]

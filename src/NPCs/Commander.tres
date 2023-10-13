@@ -1,11 +1,12 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://utmncj6h34fu"]
 
-[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_crdpn"]
-[ext_resource type="Texture2D" uid="uid://bcj03crn0xe6b" path="res://sprites/throwaway_sprites/sci_fi_grunt_01.png" id="2_o1gsm"]
+[ext_resource type="Script" path="res://src/Combatant.gd" id="1_d1fx4"]
+[ext_resource type="Texture2D" uid="uid://dksbfrpyqipyo" path="res://sprites/throwaway_sprites/scifi_commander_01_b.png" id="2_a7jfe"]
 
 [resource]
-script = ExtResource("1_crdpn")
-name = "Grunt"
-texture = ExtResource("2_o1gsm")
-health = 25
-attack_damage = 10
+script = ExtResource("1_d1fx4")
+name = "Commander"
+texture = ExtResource("2_a7jfe")
+current_health = 35
+max_health = 35
+attack_damage = 20

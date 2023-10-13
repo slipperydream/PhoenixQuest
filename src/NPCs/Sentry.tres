@@ -1,11 +1,12 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dpfltaxrugc4e"]
 
-[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_kbk81"]
-[ext_resource type="Texture2D" uid="uid://uos0hti3yjq4" path="res://sprites/throwaway_sprites/sci_fi_captain_01.png" id="2_cs4uy"]
+[ext_resource type="Script" path="res://src/Combatant.gd" id="1_rhuv0"]
+[ext_resource type="Texture2D" uid="uid://du78j1023ic6j" path="res://sprites/throwaway_sprites/sentry_01.png" id="2_dqtdc"]
 
 [resource]
-script = ExtResource("1_kbk81")
-name = "Captain"
-texture = ExtResource("2_cs4uy")
-health = 35
-attack_damage = 15
+script = ExtResource("1_rhuv0")
+name = "Sentry"
+texture = ExtResource("2_dqtdc")
+current_health = 50
+max_health = 50
+attack_damage = 20
