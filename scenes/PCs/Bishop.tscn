@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://8akinlsgulvr"]
 
 [ext_resource type="Script" path="res://src/Combatant.gd" id="1_k3flt"]
-[ext_resource type="Texture2D" uid="uid://bdj6q4pp44noi" path="res://assets/images/throwaway_portraits/Bishop.PNG" id="2_sf1d1"]
-[ext_resource type="Texture2D" uid="uid://dvvcm48r7nnpn" path="res://assets/images/throwaway_sprites/pirate_01.png" id="3_tkovi"]
+[ext_resource type="Texture2D" uid="uid://cxyikwu7ao0fb" path="res://assets/images/throwaway_portraits/Bishop.PNG" id="2_sf1d1"]
+[ext_resource type="Texture2D" uid="uid://baiophcd4eaug" path="res://assets/images/throwaway_sprites/pirate_01.png" id="3_tkovi"]
 
 [node name="Bishop" type="Node2D" groups=["party"]]
 script = ExtResource("1_k3flt")

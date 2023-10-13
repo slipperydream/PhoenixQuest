@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bd0fcgm82oirf"]
 
-[ext_resource type="FontFile" uid="uid://nshj7fdgrumu" path="res://assets/fonts/PixelMecha.ttf" id="1_l4mks"]
+[ext_resource type="FontFile" uid="uid://bsbf3drlkb8bw" path="res://assets/fonts/PixelMecha.ttf" id="1_l4mks"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fane"]
 content_margin_left = 5.0
@@ -24,6 +24,7 @@ content_margin_bottom = 10.0
 font_size = 32
 
 [node name="MainTextBox" type="MarginContainer"]
+custom_minimum_size = Vector2(1100, 128)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 144.0

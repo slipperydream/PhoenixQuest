@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnmwv4sa8nbca"]
 
 [ext_resource type="Script" path="res://src/Combatant.gd" id="1_xgf5v"]
-[ext_resource type="Texture2D" uid="uid://d3keit6cnxad7" path="res://assets/images/throwaway_portraits/HiGears.PNG" id="2_221xd"]
-[ext_resource type="Texture2D" uid="uid://diwvv3t4ohib1" path="res://assets/images/throwaway_sprites/sentry_02.png" id="3_g7ql2"]
+[ext_resource type="Texture2D" uid="uid://byas3geri3w4q" path="res://assets/images/throwaway_portraits/HiGears.PNG" id="2_221xd"]
+[ext_resource type="Texture2D" uid="uid://bd8125xccdjbn" path="res://assets/images/throwaway_sprites/sentry_02.png" id="3_g7ql2"]
 
 [node name="HiGears" type="Node2D" groups=["party"]]
 script = ExtResource("1_xgf5v")

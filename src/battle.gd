@@ -1,6 +1,9 @@
 extends Control
 
-signal textbox_closed
+signal ran_away
+signal battle_over
+signal enemy_appears
+
 enum BarType {HEALTH, ENERGY}
 
 var enemy : Combatant = null
@@ -13,7 +16,7 @@ var turns : int = 0
 # set up subscenes
 @onready var textbox = $MainTextBox
 #@onready var bottom_actions =
-@onready var turn_queue : TurnQueue = $TurnQueue
+@onready var turn_queue : TurnQueue = $Characters
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,75 +32,23 @@ func _ready():
 			enemy = x
 			print("%s is the enemy" % x.char_name)
 	set_party_display()
-	set_enemy_display()
 	
-	textbox.hide()
-	$ActionsBottomContainer.hide()
-	
-	if enemy:
-		display_text("A wild %s appears!" % enemy.char_name)
-	await self.textbox_closed
-	$ActionsBottomContainer.show()
-	for x in $ActionsBottomContainer.get_tree().get_nodes_in_group("combat"):
-		x.show()
-		
+	emit_signal("enemy_appears", enemy.char_name)	
 	play_turn()
 
 func set_party_display():	
-	party_hp_bars.append($PartyPanel/PartyMemberContainer1.get_node("MarginContainer/PartyMemberData/GridContainer/HPContainer"))
-	party_hp_bars.append($PartyPanel/PartyMemberContainer2.get_node("MarginContainer/PartyMemberData/GridContainer/HPContainer"))
-	party_hp_bars.append($PartyPanel/PartyMemberContainer3.get_node("MarginContainer/PartyMemberData/GridContainer/HPContainer"))
-
-	for n in party.size():
-		set_bar(party_hp_bars[n], BarType.HEALTH, party[n].current_health, party[n].max_health)	
-		#set_bar(players[n], BarType.ENERGY, current_party_health[n], party[n].max_health)
-	$PartyPanel/PartyMemberContainer1.get_node("MarginContainer/PartyMemberData/GridContainer/Name").text = party[0].char_name
-	$PartyPanel/PartyMemberContainer2.get_node("MarginContainer/PartyMemberData/GridContainer/Name").text = party[1].char_name
-	$PartyPanel/PartyMemberContainer3.get_node("MarginContainer/PartyMemberData/GridContainer/Name").text = party[2].char_name
-	
 	# Draw characters on screen
 	$PartyMember1.texture = party[0].texture
 	$PartyMember1.set_flip_h(true)
 	$PartyMember2.texture = party[1].texture
 	$PartyMember3.texture = party[2].texture
-	
-	# Portraits
-	$PartyPanel/PartyMemberContainer1.get_node("MarginContainer/PartyMemberData/Portrait").texture = party[0].portrait	
-	$PartyPanel/PartyMemberContainer2.get_node("MarginContainer/PartyMemberData/Portrait").texture = party[1].portrait
-	$PartyPanel/PartyMemberContainer3.get_node("MarginContainer/PartyMemberData/Portrait").texture = party[2].portrait
 
-func set_enemy_display():
-	set_bar($EnemyContainer, BarType.HEALTH, enemy.current_health, enemy.current_health)
-	$EnemyContainer/EnemySprite.texture = enemy.texture
-		
-func set_bar(character_data, type, current, maximum):
-	if type == BarType.HEALTH:
-		character_data.get_node("HealthBar").value = current
-		character_data.get_node("HealthBar").max_value = maximum
-		character_data.get_node("HP").text = "HP: %d" % [current]
-	elif type == BarType.ENERGY:
-		character_data.get_node("EnergyBar").value = current
-		character_data.get_node("EnergyBar").max_value = maximum
-		character_data.get_node("Energy").text = "EN: %d" % [current]
 	
-func _input(event):
-	if textbox.visible and (Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
-		textbox.hide()
-		emit_signal("textbox_closed")
-		
-	$PartyMember1/ActionsCharacterContainer.hide()
-	$PartyMember2/ActionsCharacterContainer.hide()
-	$PartyMember3/ActionsCharacterContainer.hide()
-	
+func _input(event):		
 	if Input.is_action_just_pressed("attack"):
 		pass
 	elif Input.is_action_just_pressed("run_away"):
 		run()
-			
-func display_text(text):
-	textbox.show()
-	textbox.get_node("Textbox").get_node("Text").text = text
-	
 
 func get_active_combatant():
 	return turn_queue.active_combatant
@@ -106,7 +57,7 @@ func play_turn():
 	var combatant : Combatant = get_active_combatant()
 	var targets : Array = get_targets()
 	if not targets:
-		battle_over()
+		end_battle()
 		return
 	var target : Combatant
 	if combatant.is_party_member:
@@ -116,28 +67,19 @@ func play_turn():
 		target = targets[randi() % targets.size()]
 		
 	await turn_queue.play_turn(target)
+	await get_tree().create_timer(0.5).timeout
 	if turns < 5:
 		turns += 1
 		play_turn()
 
 func run():
-	display_text("Got away safely!")
-	await self.textbox_closed
-	for x in $ActionsBottomContainer.get_tree().get_nodes_in_group("combat"):
-		x.hide()
+	emit_signal("ran_away")
 	await get_tree().create_timer(0.25).timeout
-	get_tree().quit()	
-
-func _on_defend_pressed():
-	is_defending = true
-	display_text("You prepare your defense!")
-	await self.textbox_closed
-	
-func battle_over():
-	display_text("Battle is over, choom!")
-	await self.textbox_closed
 	get_tree().quit()
 	
+func end_battle():
+	emit_signal("battle_over")
+
 func get_targets():
 	if get_active_combatant().is_party_member:
 		return turn_queue.get_opponents()

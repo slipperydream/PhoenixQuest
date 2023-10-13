@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://db111s5l3rfco"]
+
+[ext_resource type="PackedScene" uid="uid://csiv1maj6fa5d" path="res://scenes/enemy_container.tscn" id="1_6b8u4"]
+[ext_resource type="Script" path="res://scenes/battle_gui.gd" id="1_vgts1"]
+[ext_resource type="PackedScene" uid="uid://djsfrl0lta3vh" path="res://scenes/general_actions.tscn" id="2_ik44v"]
+[ext_resource type="PackedScene" uid="uid://bd0fcgm82oirf" path="res://scenes/main_textbox.tscn" id="3_qbn7a"]
+[ext_resource type="PackedScene" uid="uid://blln2262e1gs8" path="res://scenes/party_panel.tscn" id="4_jntk0"]
+
+[node name="BattleGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vgts1")
+
+[node name="EnemyContainer" parent="." instance=ExtResource("1_6b8u4")]
+layout_mode = 1
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="GeneralActions" parent="." instance=ExtResource("2_ik44v")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = -32.0
+offset_right = 534.0
+offset_bottom = 0.0
+
+[node name="MainTextBox" parent="." instance=ExtResource("3_qbn7a")]
+layout_mode = 1
+offset_bottom = 16.0
+
+[node name="PartyPanel" parent="." instance=ExtResource("4_jntk0")]
+layout_mode = 1
+offset_left = -624.0
+offset_top = -95.0
+offset_right = 0.0
+offset_bottom = 0.0

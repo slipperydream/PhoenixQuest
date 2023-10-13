@@ -1,19 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6ex3e1s67i6h"]
+[gd_scene load_steps=12 format=3 uid="uid://b6ex3e1s67i6h"]
 
 [ext_resource type="Script" path="res://src/battle.gd" id="1_spkef"]
-[ext_resource type="Texture2D" uid="uid://5tcr0og1wysf" path="res://assets/images/throwaway_backgrounds/wet_city.PNG" id="2_0gt57"]
-[ext_resource type="PackedScene" uid="uid://csiv1maj6fa5d" path="res://enemy_container.tscn" id="3_fgs44"]
-[ext_resource type="Texture2D" uid="uid://6mx2wljtrs4l" path="res://assets/images/throwaway_sprites/golem_armor.png" id="6_vgipl"]
-[ext_resource type="PackedScene" uid="uid://m0wnc3hq1hqv" path="res://PartyMemberUI.tscn" id="7_8lshx"]
-[ext_resource type="Texture2D" uid="uid://u8780c3vqbh6" path="res://assets/images/throwaway_sprites/robot.png" id="8_jw0pj"]
-[ext_resource type="Texture2D" uid="uid://dbnivn4je2tx3" path="res://assets/images/throwaway_sprites/sci_fi_captain_03.png" id="9_622x0"]
-[ext_resource type="PackedScene" uid="uid://djsfrl0lta3vh" path="res://general_actions.tscn" id="11_6u0rc"]
-[ext_resource type="PackedScene" uid="uid://7ednuapk87d7" path="res://src/PCs/Asfet.tscn" id="11_xw3ed"]
-[ext_resource type="PackedScene" uid="uid://dnmwv4sa8nbca" path="res://src/PCs/HiGears.tscn" id="11_ykq60"]
-[ext_resource type="PackedScene" uid="uid://8akinlsgulvr" path="res://src/PCs/Bishop.tscn" id="12_u2d8r"]
-[ext_resource type="PackedScene" uid="uid://dbnal4x4qi44u" path="res://turn_queue.tscn" id="13_8b3ju"]
-[ext_resource type="PackedScene" uid="uid://cueq7lic5pibl" path="res://src/NPCs/Captain.tscn" id="14_gqvlo"]
-[ext_resource type="PackedScene" uid="uid://bd0fcgm82oirf" path="res://main_textbox.tscn" id="15_6dre4"]
+[ext_resource type="Texture2D" uid="uid://ps5y1561u0x1" path="res://assets/images/throwaway_backgrounds/wet_city.PNG" id="2_0gt57"]
+[ext_resource type="Texture2D" uid="uid://d3d7cd6ltj6e7" path="res://assets/images/throwaway_sprites/Blade.png" id="6_aygyq"]
+[ext_resource type="Texture2D" uid="uid://diu6g1th4xhdf" path="res://assets/images/throwaway_sprites/robot.png" id="8_jw0pj"]
+[ext_resource type="Texture2D" uid="uid://du41bad6243jv" path="res://assets/images/throwaway_sprites/sci_fi_captain_03.png" id="9_622x0"]
+[ext_resource type="PackedScene" uid="uid://dnmwv4sa8nbca" path="res://scenes/PCs/HiGears.tscn" id="11_ykq60"]
+[ext_resource type="PackedScene" uid="uid://db111s5l3rfco" path="res://scenes/battle_gui.tscn" id="12_ar4tq"]
+[ext_resource type="PackedScene" uid="uid://8akinlsgulvr" path="res://scenes/PCs/Bishop.tscn" id="12_u2d8r"]
+[ext_resource type="PackedScene" uid="uid://dbnal4x4qi44u" path="res://scenes/turn_queue.tscn" id="13_8b3ju"]
+[ext_resource type="PackedScene" uid="uid://cii21ygwal88e" path="res://scenes/PCs/Omaha.tscn" id="13_jviui"]
+[ext_resource type="PackedScene" uid="uid://cueq7lic5pibl" path="res://scenes/NPCs/Captain.tscn" id="14_gqvlo"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -23,17 +20,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_spkef")
-
-[node name="ActionsBottomContainer" parent="." instance=ExtResource("11_6u0rc")]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 534.0
-offset_bottom = 32.0
-grow_vertical = 1
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -45,60 +31,23 @@ grow_vertical = 2
 texture = ExtResource("2_0gt57")
 stretch_mode = 3
 
-[node name="EnemyContainer" parent="." instance=ExtResource("3_fgs44")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 128.0
-offset_bottom = 128.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="PartyPanel" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -627.0
-offset_top = -96.0
-offset_right = -3.0
-offset_bottom = -1.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-columns = 3
-
-[node name="PartyMemberContainer1" parent="PartyPanel" instance=ExtResource("7_8lshx")]
-layout_mode = 2
-
-[node name="PartyMemberContainer2" parent="PartyPanel" instance=ExtResource("7_8lshx")]
-layout_mode = 2
-
-[node name="PartyMemberContainer3" parent="PartyPanel" instance=ExtResource("7_8lshx")]
-layout_mode = 2
-
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
 [node name="PartyMember1" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 280.0
-offset_top = 56.0
-offset_right = 368.0
-offset_bottom = 184.0
+offset_left = -264.5
+offset_top = 61.0
+offset_right = -115.5
+offset_bottom = 189.0
+grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_vgipl")
+texture = ExtResource("6_aygyq")
 
 [node name="PartyMember2" type="TextureRect" parent="."]
 layout_mode = 1
@@ -130,15 +79,22 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_622x0")
 
-[node name="TurnQueue" parent="." instance=ExtResource("13_8b3ju")]
+[node name="Characters" parent="." instance=ExtResource("13_8b3ju")]
 
-[node name="Captain" parent="TurnQueue" instance=ExtResource("14_gqvlo")]
+[node name="Enemy" parent="Characters" instance=ExtResource("14_gqvlo")]
 
-[node name="Asfet" parent="TurnQueue" instance=ExtResource("11_xw3ed")]
+[node name="Player1" parent="Characters" instance=ExtResource("12_u2d8r")]
 
-[node name="Bishop" parent="TurnQueue" instance=ExtResource("12_u2d8r")]
+[node name="Player2" parent="Characters" instance=ExtResource("13_jviui")]
 
-[node name="HiGears" parent="TurnQueue" instance=ExtResource("11_ykq60")]
+[node name="Player3" parent="Characters" instance=ExtResource("11_ykq60")]
 
-[node name="MainTextBox" parent="." instance=ExtResource("15_6dre4")]
+[node name="BattleGUI" parent="." instance=ExtResource("12_ar4tq")]
 layout_mode = 1
+
+[connection signal="battle_over" from="." to="BattleGUI" method="_on_battle_battle_over"]
+[connection signal="enemy_appears" from="." to="BattleGUI" method="_on_battle_enemy_appears"]
+[connection signal="ran_away" from="." to="BattleGUI" method="_on_battle_ran_away"]
+[connection signal="health_changed" from="Characters/Player1" to="BattleGUI" method="_on_player_1_health_changed"]
+[connection signal="health_changed" from="Characters/Player2" to="BattleGUI" method="_on_player_2_health_changed"]
+[connection signal="health_changed" from="Characters/Player3" to="BattleGUI" method="_on_player_3_health_changed"]

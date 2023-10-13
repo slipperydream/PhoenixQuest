@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cueq7lic5pibl"]
+[gd_scene load_steps=4 format=3 uid="uid://cueq7lic5pibl"]
 
 [ext_resource type="Script" path="res://src/Combatant.gd" id="1_hhtl4"]
+[ext_resource type="Texture2D" uid="uid://cidlen1k5hbyf" path="res://assets/images/throwaway_portraits/Captain.png" id="2_v3c37"]
+[ext_resource type="Texture2D" uid="uid://b3ttgddnym6hj" path="res://assets/images/throwaway_sprites/sci_fi_captain_01.png" id="3_41ekx"]
 
 [node name="Captain" type="Node2D"]
 script = ExtResource("1_hhtl4")
 char_name = "Captain"
+portrait = ExtResource("2_v3c37")
+texture = ExtResource("3_41ekx")

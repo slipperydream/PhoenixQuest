@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://m0wnc3hq1hqv"]
 
-[ext_resource type="Texture2D" uid="uid://dnkm1i023jeoc" path="res://assets/images/throwaway_portraits/Backup2.PNG" id="1_k6ken"]
-[ext_resource type="FontFile" uid="uid://dco7q32xo4jsb" path="res://assets/fonts/PixelMechaBold.ttf" id="2_aks2f"]
+[ext_resource type="Texture2D" uid="uid://dx0p3w6f4mh1f" path="res://assets/images/throwaway_portraits/Backup2.PNG" id="1_k6ken"]
+[ext_resource type="FontFile" uid="uid://ccdj5tpw61ayj" path="res://assets/fonts/PixelMechaBold.ttf" id="2_aks2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6txx"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
