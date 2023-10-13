@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://csiv1maj6fa5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrtwb"]
+bg_color = Color(0.227451, 0.227451, 0.34902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pm62"]
+bg_color = Color(0.443137, 0.858824, 0.831373, 1)
+
+[node name="EnemyContainer" type="VBoxContainer" groups=["enemies"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -177.0
+offset_right = 82.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HP" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "HP: 25
+"
+horizontal_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+visible = false
+custom_minimum_size = Vector2(2.08165e-12, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_nrtwb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6pm62")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="EnemySprite" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1

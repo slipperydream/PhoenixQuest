@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd0fcgm82oirf"]
+
+[ext_resource type="FontFile" uid="uid://nshj7fdgrumu" path="res://assets/fonts/PixelMecha.ttf" id="1_l4mks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fane"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0516p"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_60d1u"]
+font_size = 32
+
+[node name="MainTextBox" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 144.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+
+[node name="Textbox" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5fane")
+
+[node name="Text" type="Label" parent="Textbox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l4mks")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0516p")
+text = "A Hard Nugget appears. Look out his is going to peck. Also after you murder it, make a nice dinner for your self. You'll need to remove all the feathers first though. "
+label_settings = SubResource("LabelSettings_60d1u")
+autowrap_mode = 2
+
+[node name="Ticker" type="Label" parent="Textbox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -35.0
+offset_right = 13.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_l4mks")
+theme_override_font_sizes/font_size = 32
+text = ">"

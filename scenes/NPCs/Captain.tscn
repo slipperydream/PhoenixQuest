@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cueq7lic5pibl"]
+
+[ext_resource type="Script" path="res://src/Combatant.gd" id="1_hhtl4"]
+
+[node name="Captain" type="Node2D"]
+script = ExtResource("1_hhtl4")
+char_name = "Captain"

@@ -1,0 +1,208 @@
+[gd_scene load_steps=7 format=3 uid="uid://cepdxu45yajhi"]
+
+[ext_resource type="FontFile" uid="uid://d2wd67gqcqjw8" path="res://assets/fonts/FutureKid.ttf" id="1_crcbx"]
+[ext_resource type="FontFile" uid="uid://dco7q32xo4jsb" path="res://assets/fonts/PixelMechaBold.ttf" id="2_30kyn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3trr"]
+bg_color = Color(0.160784, 0.164706, 0.313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6myxc"]
+bg_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wniqp"]
+bg_color = Color(0.827451, 0.0862745, 0.486275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c77q8"]
+bg_color = Color(0.552941, 0.0823529, 0.368627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="ActionsCharacterContainer" type="GridContainer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -325.0
+offset_right = 509.0
+offset_bottom = -227.0
+grow_vertical = 2
+theme_override_constants/h_separation = 128
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Key" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_crcbx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3trr")
+text = "Space"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Attack" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_30kyn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6myxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wniqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c77q8")
+text = "Attack
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Key" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_crcbx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3trr")
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Special" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_30kyn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6myxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wniqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c77q8")
+text = "Special
+"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Key" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_crcbx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3trr")
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Venture" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_30kyn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6myxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wniqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c77q8")
+text = "Venture
+"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Key" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_crcbx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3trr")
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Caution" type="Button" parent="HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_30kyn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6myxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wniqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c77q8")
+text = "Caution
+"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Key" type="Label" parent="HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_crcbx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3trr")
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item" type="Button" parent="HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_30kyn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6myxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wniqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c77q8")
+text = "Item
+"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Key" type="Label" parent="HBoxContainer6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_crcbx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3trr")
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Defend" type="Button" parent="HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_30kyn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6myxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wniqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c77q8")
+text = "Defend
+"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://7ednuapk87d7"]
+
+[ext_resource type="Script" path="res://src/Combatant.gd" id="1_vwgqv"]
+[ext_resource type="Texture2D" uid="uid://bx81flbjkddwf" path="res://assets/images/throwaway_portraits/Asfet.PNG" id="2_5kbt0"]
+[ext_resource type="Texture2D" uid="uid://dc2u2hvtshs6e" path="res://assets/images/throwaway_sprites/Blade.png" id="3_l35oj"]
+
+[node name="Asfet" type="Node2D"]
+script = ExtResource("1_vwgqv")
+char_name = "Asfet"
+portrait = ExtResource("2_5kbt0")
+texture = ExtResource("3_l35oj")
+is_party_member = true
