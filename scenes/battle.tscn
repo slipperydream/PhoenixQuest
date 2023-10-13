@@ -84,17 +84,18 @@ texture = ExtResource("9_622x0")
 [node name="Enemy" parent="Characters" instance=ExtResource("14_gqvlo")]
 
 [node name="Player1" parent="Characters" instance=ExtResource("12_u2d8r")]
+position = Vector2(609.465, -118.93)
 
-[node name="Player2" parent="Characters" instance=ExtResource("13_jviui")]
+[node name="Player2" parent="Characters" instance=ExtResource("11_ykq60")]
+position = Vector2(609.465, -118.93)
 
-[node name="Player3" parent="Characters" instance=ExtResource("11_ykq60")]
+[node name="Player3" parent="Characters" instance=ExtResource("13_jviui")]
+position = Vector2(609.465, -118.93)
 
 [node name="BattleGUI" parent="." instance=ExtResource("12_ar4tq")]
 layout_mode = 1
 
+[connection signal="active_player_changed" from="." to="BattleGUI" method="_on_battle_active_player_changed"]
 [connection signal="battle_over" from="." to="BattleGUI" method="_on_battle_battle_over"]
 [connection signal="enemy_appears" from="." to="BattleGUI" method="_on_battle_enemy_appears"]
 [connection signal="ran_away" from="." to="BattleGUI" method="_on_battle_ran_away"]
-[connection signal="health_changed" from="Characters/Player1" to="BattleGUI" method="_on_player_1_health_changed"]
-[connection signal="health_changed" from="Characters/Player2" to="BattleGUI" method="_on_player_2_health_changed"]
-[connection signal="health_changed" from="Characters/Player3" to="BattleGUI" method="_on_player_3_health_changed"]

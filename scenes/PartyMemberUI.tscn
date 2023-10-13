@@ -93,12 +93,19 @@ text = "Player1
 [node name="HPContainer" type="HBoxContainer" parent="MarginContainer/PartyMemberData/GridContainer"]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="MarginContainer/PartyMemberData/GridContainer/HPContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aks2f")
+theme_override_font_sizes/font_size = 20
+text = "HP:"
+
 [node name="HP" type="Label" parent="MarginContainer/PartyMemberData/GridContainer/HPContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_aks2f")
 theme_override_font_sizes/font_size = 20
-text = "HP: 25
+text = "25
 "
 horizontal_alignment = 1
 
@@ -115,12 +122,19 @@ show_percentage = false
 [node name="EnergyContainer" type="HBoxContainer" parent="MarginContainer/PartyMemberData/GridContainer"]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="MarginContainer/PartyMemberData/GridContainer/EnergyContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aks2f")
+theme_override_font_sizes/font_size = 20
+text = "EP:"
+
 [node name="Energy" type="Label" parent="MarginContainer/PartyMemberData/GridContainer/EnergyContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_aks2f")
 theme_override_font_sizes/font_size = 20
-text = "EP: 25
+text = "25
 "
 horizontal_alignment = 1
 

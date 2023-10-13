@@ -3,6 +3,7 @@ extends Control
 signal ran_away
 signal battle_over
 signal enemy_appears
+signal active_player_changed
 
 enum BarType {HEALTH, ENERGY}
 
@@ -14,8 +15,6 @@ var is_defending = false
 var turns : int = 0
 
 # set up subscenes
-@onready var textbox = $MainTextBox
-#@onready var bottom_actions =
 @onready var turn_queue : TurnQueue = $Characters
 
 
@@ -62,12 +61,15 @@ func play_turn():
 	var target : Combatant
 	if combatant.is_party_member:
 		# TODO add user selection of target
+		combatant.active_player = true
+		emit_signal("active_player_changed", combatant.char_name)
 		target = targets[randi() % targets.size()]
 	else:
 		target = targets[randi() % targets.size()]
 		
 	await turn_queue.play_turn(target)
 	await get_tree().create_timer(0.5).timeout
+	combatant.active_player = false
 	if turns < 5:
 		turns += 1
 		play_turn()

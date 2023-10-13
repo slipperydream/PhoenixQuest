@@ -1,8 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://8akinlsgulvr"]
+[gd_scene load_steps=8 format=3 uid="uid://8akinlsgulvr"]
 
 [ext_resource type="Script" path="res://src/Combatant.gd" id="1_k3flt"]
 [ext_resource type="Texture2D" uid="uid://cxyikwu7ao0fb" path="res://assets/images/throwaway_portraits/Bishop.PNG" id="2_sf1d1"]
 [ext_resource type="Texture2D" uid="uid://baiophcd4eaug" path="res://assets/images/throwaway_sprites/pirate_01.png" id="3_tkovi"]
+
+[sub_resource type="Animation" id="Animation_5n0hv"]
+resource_name = "take_hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uflk2"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nvvbq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g64qq"]
+_data = {
+"RESET": SubResource("Animation_nvvbq"),
+"die": SubResource("Animation_uflk2"),
+"take_hit": SubResource("Animation_5n0hv")
+}
 
 [node name="Bishop" type="Node2D" groups=["party"]]
 script = ExtResource("1_k3flt")
@@ -11,3 +63,8 @@ portrait = ExtResource("2_sf1d1")
 texture = ExtResource("3_tkovi")
 is_party_member = true
 speed = 15
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g64qq")
+}

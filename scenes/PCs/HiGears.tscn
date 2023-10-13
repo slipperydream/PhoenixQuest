@@ -1,8 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnmwv4sa8nbca"]
+[gd_scene load_steps=8 format=3 uid="uid://dnmwv4sa8nbca"]
 
 [ext_resource type="Script" path="res://src/Combatant.gd" id="1_xgf5v"]
 [ext_resource type="Texture2D" uid="uid://byas3geri3w4q" path="res://assets/images/throwaway_portraits/HiGears.PNG" id="2_221xd"]
 [ext_resource type="Texture2D" uid="uid://bd8125xccdjbn" path="res://assets/images/throwaway_sprites/sentry_02.png" id="3_g7ql2"]
+
+[sub_resource type="Animation" id="Animation_tjsga"]
+resource_name = "take_hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.58825, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_i6t3g"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fpbbc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytltp"]
+_data = {
+"RESET": SubResource("Animation_fpbbc"),
+"die": SubResource("Animation_i6t3g"),
+"take_hit": SubResource("Animation_tjsga")
+}
 
 [node name="HiGears" type="Node2D" groups=["party"]]
 script = ExtResource("1_xgf5v")
@@ -11,3 +75,8 @@ portrait = ExtResource("2_221xd")
 texture = ExtResource("3_g7ql2")
 is_party_member = true
 speed = 20
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ytltp")
+}
