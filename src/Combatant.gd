@@ -12,6 +12,8 @@ class_name Combatant
 @export var attack_damage = 20
 @export var speed = 10
 
+signal took_damage
+signal died
 
 func play_turn(target):
 	attack(target)
@@ -23,13 +25,17 @@ func attack(target):
 
 func take_damage(damage):
 	current_health = max(0, current_health - damage)
-	$AnimationPlayer.play("damaged")
-	await $AnimationPlayer.animation_finished
+	var tween = create_tween()
+	var start_color = Color(1.0, 1.0, 1.0, 1.0)
+	var end_color = Color(1.0, 1.0, 1.0, 0.0)
+	tween.tween_property(self, "modulate", end_color, 0.2)
+	tween.tween_property(self, "modulate", start_color, 0.2)
 	if current_health == 0:
 		die()
 
 func die():
 	print("%s is defeated!" % char_name)
 		
-	$AnimationPlayer.play("death")
-	await $AnimationPlayer.animation_finished
+	var end_color = Color(1.0, 1.0, 1.0, 0.0)
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", end_color, 0.6)

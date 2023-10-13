@@ -7,10 +7,14 @@ var enemy : Combatant = null
 var party : Array[Combatant] = []
 var party_hp_bars = []
 
-@onready var turn_queue : TurnQueue = $TurnQueue
 var is_defending = false
-var targeted_player = 0
 var turns : int = 0
+
+# set up subscenes
+@onready var textbox = $MainTextBox
+#@onready var bottom_actions =
+@onready var turn_queue : TurnQueue = $TurnQueue
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,7 +31,7 @@ func _ready():
 	set_party_display()
 	set_enemy_display()
 	
-	$TextboxMarginContainer/Textbox.hide()
+	textbox.hide()
 	$ActionsBottomContainer.hide()
 	
 	if enemy:
@@ -77,8 +81,8 @@ func set_bar(character_data, type, current, maximum):
 		character_data.get_node("Energy").text = "EN: %d" % [current]
 	
 func _input(event):
-	if $TextboxMarginContainer/Textbox.visible and (Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
-		$TextboxMarginContainer/Textbox.hide()
+	if textbox.visible and (Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+		textbox.hide()
 		emit_signal("textbox_closed")
 		
 	$PartyMember1/ActionsCharacterContainer.hide()
@@ -86,13 +90,13 @@ func _input(event):
 	$PartyMember3/ActionsCharacterContainer.hide()
 	
 	if Input.is_action_just_pressed("attack"):
-		attack(0)
+		pass
 	elif Input.is_action_just_pressed("run_away"):
 		run()
 			
 func display_text(text):
-	$TextboxMarginContainer/Textbox.show()
-	$TextboxMarginContainer/Textbox/BattleText.text = text
+	textbox.show()
+	textbox.get_node("Textbox").get_node("Text").text = text
 	
 
 func get_active_combatant():
@@ -115,24 +119,6 @@ func play_turn():
 	if turns < 5:
 		turns += 1
 		play_turn()
-	
-func enemy_turn():
-	await self.textbox_closed
-	
-	if is_defending:
-		is_defending = false
-		$AnimationPlayer.play("small_shake")
-		await $AnimationPlayer.animation_finished
-		#display_text("You block the attack!")
-		await self.textbox_closed
-	else:	
-		party[targeted_player].current_health = max(0, party[targeted_player].current_health - enemy.attack_damage)
-		set_bar(party_hp_bars[targeted_player], BarType.HEALTH, party[targeted_player].current_health, party[targeted_player].max_health)
-		
-		$AnimationPlayer.play("screen_shake")
-		await $AnimationPlayer.animation_finished
-		#display_text("%s dealt you %d damage!" % [enemy.name, enemy.attack_damage])
-		
 
 func run():
 	display_text("Got away safely!")
@@ -140,13 +126,7 @@ func run():
 	for x in $ActionsBottomContainer.get_tree().get_nodes_in_group("combat"):
 		x.hide()
 	await get_tree().create_timer(0.25).timeout
-	get_tree().quit()
-
-
-func attack(player):
-	
-	set_bar($EnemyContainer, BarType.HEALTH, enemy.current_health, enemy.max_health)
-	
+	get_tree().quit()	
 
 func _on_defend_pressed():
 	is_defending = true
